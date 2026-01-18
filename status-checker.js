@@ -17,7 +17,8 @@ import { checkIfNoMovesLeft } from './board-printer.js';
     Return true if the player has made a move in all 3 squares in the row
     Otherwise, return false
 */
-function checkRow(board, player, rowNumber) {
+export function checkRow(board, player, rowNumber) {
+    return true;
 }
 
 /*
