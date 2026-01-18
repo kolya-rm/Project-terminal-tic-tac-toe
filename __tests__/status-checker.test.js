@@ -67,4 +67,17 @@ describe("CheckDiagonal function tests", () => {
       expect(checkDiagonal(board, player, column)).toEqual(expected);
     });
   });
+
+  [
+    { board: [["0", "X", "0"], ["0", "X", "_"], ["0", "_", "X"]], player: "X", column: 0, expected: false },
+    { board: [["_", "X", "X"], ["0", "X", "0"], ["0", "X", "_"]], player: "X", column: 1, expected: false },
+    { board: [["_", "X", "X"], ["X", "0", "0"], ["0", "X", "_"]], player: "X", column: 1, expected: false },
+    { board: [["X", "0", "X"], ["0", "0", "_"], ["_", "X", "0"]], player: "0", column: 0, expected: false },
+    { board: [["_", "X", "0"], ["X", "0", "_"], ["X", "0", "0"]], player: "0", column: 1, expected: false },
+    { board: [["_", "X", "0"], ["0", "X", "_"], ["X", "0", "0"]], player: "0", column: 1, expected: false },
+  ].forEach(({board, player, column, expected}) => {
+    it("For diagonal does not completed by player returns false", () => {
+      expect(checkDiagonal(board, player, column)).toEqual(expected);
+    });
+  });
 });
